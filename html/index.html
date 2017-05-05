@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+	<title></title>
+	<script>
+		/* 友盟统计 */
+		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		document.write(unescape("%3Cspan id='cnzz_stat_icon_1261808041'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261808041%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+
+		/* 动态改变根节点html的fontSize */
+		(function(w) {
+		  rootFontSize();
+		  //改变窗口大小
+		  window.onresize = function() {
+		    rootFontSize();
+		  }
+		  function rootFontSize() {
+		    var deviceWidth = document.documentElement.clientWidth;
+		    if(deviceWidth > 750) deviceWidth = 750;
+					w.rootFontSize = deviceWidth / 7.5;
+				if(deviceWidth < 321){
+					w.bodyFontSize = 15
+				}
+				if(deviceWidth > 321 && deviceWidth < 400){
+					w.bodyFontSize = 16
+				}
+				if(deviceWidth > 400){
+					w.bodyFontSize = 18
+				}
+		    document.documentElement.style.fontSize = w.rootFontSize + 'px';
+		  }
+		})(window);
+
+	</script>
+	<link rel="stylesheet" href="../src/styles/base.css">
+</head>
+<body  >
+	<div class="wrap" id="wrap">
+		<div class="item item-1">
+			<div data-index="1" class="global_error"><img class="global_error_img" src="" /><span class="global_error_text">数据获取失败,请检查网络</span></div>
+			<div class="earthAnimationBack showStatue">
+				<img class="backImg" src="../src/images/back.png">
+				<div class="sichelogeImgPanel">
+					<img class="sichelogeImg" src="../src/images/sicheloge.png">
+				</div>
+				<img id="earthImg" class="earthImg" src="../src/images/earth.png">
+				<img class="auraImg" src="../src/images/aura.png">
+				<img class="plainImg" src="../src/images/plain.png">
+			</div>
+			<canvas id="myCanvasEarth" class="showStatue" width="750" height="750" layoutwidth="750" style="z-index: 10;position: relative;" ></canvas>
+			<div class="content showStatue">
+				<div class="content_date"></div>
+				<div class="content_distance"></div>
+				<div id="content_round" class="content_round">
+					<div id="blueBall" class="blueBall">
+							<img src="../src/images/halo.png"  class="blueBallImg">
+					</div>
+					<span class="content_round_panel">
+						<span id="content_round_num" class="content_round_num" ></span>
+						<span id="content_round_unit" class="content_round_unit"></span>
+					</span>
+				</div>
+				<div class="content_praise"></div>
+			</div>
+		</div>
+		<div class="item item-2">
+			<div data-index="2" class="global_error"><img class="global_error_img" src="" /><span class="global_error_text">数据获取失败,请检查网络</span></div>
+			<div class="title showStatue">
+				<div class="title_title"></div>
+				<div class="title_content"></div>
+			</div>
+			<canvas id="myCanvasStopcockBack" class="myCanvasStopcockBack showStatue" width="750" height="750" layoutwidth="750"  ></canvas>
+			<div class="dripWaterPanel showStatue"></div>
+			<canvas id="myCanvasStopcock" class="myCanvasStopcock showStatue" width="750" height="750" layoutwidth="750" ></canvas>
+			<div class="content showStatue">
+				<div id="content_title" class="content_title">
+					<span class="ct_mes"></span>
+					<span class="ct_numtext">
+						<span class="ct_num"></span><span class="ct_text"></span>
+						<div class="ct_numtextPercent">
+							<span class="percentIcon"></span><span class="ctp_percent"></span>
+						</div>
+					</span>
+				</div>
+				<div class="content_body">
+					<span class="cbItem cbItemLeft">
+						<span class="cbiTop"></span>
+						<span class="cbiMiddle">
+							<span class="cbi_num"></span><span class="cbi_unit"></span>
+							<span class="cbiIconItem cbiBottomCil"><span class="percentIcon"></span><span class="cil_percent"></span></span>
+						</span>
+						<span class="cbiBottom">
+							<span class="cbiBottomCil"><span class="percentIcon"></span><span class="cil_percent"></span></span>
+						</span>
+					</span>
+					<span class="cbItem cbItemMiddle">
+						<span class="cbiTop"></span>
+						<span class="cbiMiddle">
+							<span class="cbi_num"></span><span class="cbi_unit"></span>
+							<span class="cbiIconItem cbiBottomCim"><span class="percentIcon"></span><span class="cim_percent"></span></span>
+						</span>
+						<span class="cbiBottom">
+							<span class="cbiBottomCim"><span class="percentIcon"></span><span class="cim_percent"></span></span>
+						</span>
+					</span>
+					<span class="cbItem cbItemRight">
+						<span class="cbiTop"></span>
+						<span class="cbiMiddle">
+							<span class="cbi_num"></span><span class="cbi_unit"></span>
+							<span class="cbiIconItem cbiBottomCir"><span class="percentIcon"></span><span class="cir_percent"></span></span>
+						</span>
+						<span class="cbiBottom">
+							<span class="cbiBottomCir"><span class="percentIcon"></span><span class="cir_percent"></span></span>
+						</span>
+					</span>
+				</div>
+				<div class="content_mes">
+					<span class="cm_mes"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 加载提示 _S -->
+	<div id="global" class="global">
+	    <div class="slider"><span class="sprite_global">
+				<i class="sprite_point"></i>
+				<i class="sprite_point mg-mt10"></i>
+				<i class="sprite_arrow_top"></i>
+				<i class="sprite_arrow_bottom"></i>
+			</span></div>
+	</div>
+	<!--全局加载提示-->
+	<div id="global_loading" class="global_loading">
+		<div class="loadEffect">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+    </div>
+	</div>
+	<!--缓存图片-->
+	<img src="../src/images/nodata.png" class="cacheImg">
+	<img src="../src/images/smail.png" class="cacheImg">
+	<!--缓存图片-->
+	<!-- <script src="../src/scripts/main.js"></script> -->
+	<!-- build:js -->
+	<script src="../src/scripts/zepto.min.js"></script>
+	<script src="../src/scripts/iSlider.js"></script>
+	<script src="../src/scripts/diaLog.js"></script>
+	<script src="../src/scripts/ballTouch.js"></script>
+	<script src="../src/scripts/config.js"></script>
+	<script src="../src/scripts/canvas.js"></script>
+	<script src="../src/scripts/earthCanvas.js"></script>
+	<script src="../src/scripts/stopcock.js"></script>
+	<script src="../src/scripts/index.js"></script>
+	<!-- endbuild -->
+</body>
+</html>
